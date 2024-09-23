@@ -1,0 +1,21 @@
+## Retrieve all the concerts.
+GET http://172.19.69.46:3001/api/concerts HTTP/1.1
+### Retrieve concert given the id
+GET http://172.19.69.46:3001/api/1/concerts HTTP/1.1
+### Retrieve concertseates given the iduser
+GET http://172.19.69.46:3001/api/userReservations HTTP/1.1
+###
+POST http://172.19.69.46:3001/api/reservations HTTP/1.1
+content-type: application/json
+
+{
+ "idConcert": 6,
+ "seats": ["1A","2A"]
+}
+
+###
+DELETE http://172.19.69.46:3001/api/1/reservations HTTP/1.1
+###
+
+
+

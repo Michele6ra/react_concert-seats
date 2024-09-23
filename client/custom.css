@@ -1,0 +1,190 @@
+.user-icon {
+    font-size: 30px;
+}
+
+.title {
+    text-align: center;
+    background-color: #e2e2e3;
+}
+
+.seatmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.seatmap-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.seatmap-seat {
+    width: 40px;
+    height: 40px;
+    background-color: #28a745;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    user-select: none;
+}
+
+.seatmap-seat:hover {
+    background-color: #218838;
+}
+
+.seatmap-seat.selected {
+    background-color: rgb(255, 225, 0); 
+    
+}
+
+.seatmap-seat.occupied {
+    background-color: #dc3545;
+    cursor: not-allowed;
+}
+
+.seatmap-seat.readonly {
+    cursor: default; 
+    pointer-events: none; 
+    cursor: not-allowed;
+}
+
+.seatmap-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    .seatmap-seat {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .seatmap-seat {
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+    }
+}
+
+.seatmap-container {
+    overflow-x: auto;
+    max-height: 80vh;
+}
+
+.seatmap-row {
+    margin-bottom: 7px;
+}
+
+.seatmap-row + .seatmap-row {
+    margin-top: 10px;
+}
+
+.seatmap-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.custom-toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1050;
+}
+
+.custom-toast-success {
+    background-color: rgb(116, 245, 116); 
+    color: darkgreen;
+    font-weight: bold;
+    border: none; 
+}
+
+.custom-toast-error {
+    background-color: red; 
+    color: darkred; 
+    font-weight: bold;
+    border: none; 
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.toast-animate-in {
+    animation: slideInRight 0.5s forwards;
+}
+
+.toast-animate-out {
+    animation: slideOutRight 0.5s forwards;
+}
+
+@keyframes blink {
+    0% {
+      background-color: blue;
+    }
+    50% {
+      background-color: lightcyan;
+    }
+    100% {
+      background-color: blue;
+    }
+  }
+  
+  .blinking {
+    animation: blink 0.5s infinite alternate;
+  }
+
+  .back {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 2px solid #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    background-color: #CCCCCC;
+    color: black;
+    transition: background-color 0.3s ease;
+}

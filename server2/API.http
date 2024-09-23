@@ -1,0 +1,31 @@
+# NB: ALL THESE TOKENS needs to be re-generated because they are expired!
+
+POST http://localhost:3002/api/discount HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb3lhbCI6MCwiYXV0aElkIjoxMjM0LCJpYXQiOjE3MjUzNTEyNjAsImV4cCI6MTcyNTM1MTMyMH0.78UpGT3XpfbK3sHi1r522VVRya6pzJ7KLZoJbJk_HiA
+Content-Type: application/json
+
+{ "listSeats": ["1A", "10B", "10C", "13C"] }
+
+###
+# basic access level token
+POST http://localhost:3002/api/discount HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb3lhbCI6MCwiYXV0aElkIjoxMjM0LCJpYXQiOjE3MjUzNTExNTMsImV4cCI6MTcyNTM1MTIxM30.ByrHNTcmk8CUYWWGWjc9kIX-KJZrGbX8X6mQgJ8mtjw
+Content-Type: application/json
+
+{ "listSeats": ["1A", "10B", "10C", "13C"] }
+
+###
+# expired token
+POST http://localhost:3002/api/discount HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJwcmVtaXVtIiwiYXV0aElkIjoxMjM0LCJpYXQiOjE3MTc5MzMzNDUsImV4cCI6MTcxNzkzMzQwNX0.5MInPvXlS-F-5NXzJXSZbu9aOlFGWhxqZbIDoloeF38
+Content-Type: application/json
+
+{ "listSeats": ["1A", "10B", "10C", "13C"] }
+
+###
+# invalid token signature
+POST http://localhost:3002/api/discount HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJiYXNpYyIsImF1dGhJZCI6MTIzNCwiaWF0IjoxNzIwMzk3MzI3LCJleHAiOjE3MjAzOTczODd9.LsYKd9uyHBwkSy8Vslk5XkfDE_D37Aiukzv-U9tJcB0
+Content-Type: application/json
+
+{ "listSeats": ["1A", "10B", "10C", "13C"] }
